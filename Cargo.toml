@@ -1,0 +1,59 @@
+[package]
+name = "accesskit-rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/doom-fish/accesskit-rs"
+repository = "https://github.com/doom-fish/accesskit-rs"
+description = "AccessKit adapter for AppKit on macOS, with a Swift bridge in place of Objective-C runtime bindings"
+authors = ["Per Johansson <per@doom.fish>"]
+keywords = ["accesskit", "accessibility", "appkit", "voiceover", "macos"]
+categories = ["accessibility", "gui", "os::macos-apis"]
+rust-version = "1.85"
+resolver = "3"
+readme = "README.md"
+build = "build.rs"
+include = [
+    "src/**/*",
+    "examples/**/*",
+    "swift-bridge/Package.swift",
+    "swift-bridge/Sources/**/*",
+    "build.rs",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE-*",
+    "LICENSE.chromium",
+    "CHANGELOG.md",
+    "COVERAGE.md",
+]
+
+[lints.rust]
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+missing_safety_doc = "allow"
+
+[dependencies]
+accesskit = "0.24.1"
+accesskit_consumer = "0.38.0"
+
+[dev-dependencies]
+appkit-rs = { path = "../appkit-rs", version = "0.1.1" }
+
+[package.metadata.docs.rs]
+default-target = "aarch64-apple-darwin"
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin"]
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[[example]]
+name = "01_window"
+
+[profile.release]
+debug = "full"
+strip = "none"
