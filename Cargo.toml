@@ -1,6 +1,6 @@
 [package]
 name = "accesskit-rs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/doom-fish/accesskit-rs"
@@ -42,7 +42,7 @@ accesskit = "0.24.1"
 accesskit_consumer = "0.38.0"
 
 [dev-dependencies]
-appkit-rs = { path = "../appkit-rs", version = "0.1.1" }
+appkit-rs = { path = "../appkit-rs", version = "0.2.1" }
 
 [package.metadata.docs.rs]
 default-target = "aarch64-apple-darwin"
