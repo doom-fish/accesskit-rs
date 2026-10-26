@@ -4,6 +4,15 @@ This file records the important changes to `accesskit-rs`.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-26
+
+### Changed
+
+- Use `accesskit` 0.25.2 and `accesskit_consumer` 0.39.2. Public AccessKit types are not compatible with version 0.1.
+- Use `TreeInfo` for tree metadata.
+- Use `NodeRef` and `FullNodeId` from `accesskit_consumer`.
+- Require Rust 1.87 or later, as AccessKit requires.
+
 ## [0.1.1] - 2026-10-26
 
 ### Fixed

@@ -3,7 +3,7 @@
 // the LICENSE-APACHE file) or the MIT license (found in
 // the LICENSE-MIT file), at your option.
 
-use accesskit_consumer::{Node, TextPosition, TextRange};
+use accesskit_consumer::{NodeRef as Node, TextPosition, TextRange};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Range {

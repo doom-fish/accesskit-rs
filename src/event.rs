@@ -7,7 +7,7 @@ use std::collections::{HashSet, VecDeque};
 use std::rc::Rc;
 
 use accesskit::{Live, Role};
-use accesskit_consumer::{FilterResult, Node, NodeId, TreeChangeHandler};
+use accesskit_consumer::{FilterResult, FullNodeId as NodeId, NodeRef as Node, TreeChangeHandler};
 
 use crate::context::Context;
 use crate::ffi;

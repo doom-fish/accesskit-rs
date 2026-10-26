@@ -4,7 +4,9 @@ An [AccessKit](https://accesskit.dev) adapter for `AppKit` on macOS. It gives an
 
 The adapter has the same functions as `accesskit_macos`. A Swift bridge does all the `AppKit` work, thus the crate does not use Objective-C runtime bindings.
 
-The crate requires macOS 11 or later and Rust 1.85 or later.
+The crate requires macOS 11 or later and Rust 1.87 or later.
+
+Version 0.2 uses `accesskit` 0.25.2 and `accesskit_consumer` 0.39.2. Its public AccessKit types are not compatible with version 0.1.
 
 ## Quick start
 
@@ -13,7 +15,7 @@ The crate requires macOS 11 or later and Rust 1.85 or later.
 ```rust,no_run
 use core::ffi::c_void;
 
-use accesskit::{ActionHandler, ActionRequest, ActivationHandler, Node, NodeId, Role, Tree, TreeId, TreeUpdate};
+use accesskit::{ActionHandler, ActionRequest, ActivationHandler, Node, NodeId, Role, TreeId, TreeInfo, TreeUpdate};
 use accesskit_rs::SubclassingAdapter;
 
 struct InitialTree;
@@ -26,7 +28,7 @@ impl ActivationHandler for InitialTree {
         window.set_children(vec![NodeId(1)]);
         Some(TreeUpdate {
             nodes: vec![(NodeId(0), window), (NodeId(1), button)],
-            tree: Some(Tree::new(NodeId(0))),
+            tree: Some(TreeInfo::new(NodeId(0))),
             tree_id: TreeId::ROOT,
             focus: NodeId(1),
         })

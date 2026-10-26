@@ -14,7 +14,7 @@ use std::cell::RefCell;
 use std::rc::{Rc, Weak};
 
 use accesskit::{Action, ActionData, ActionRequest, Color, Orientation, Point, Rect, Role, TextAlign, TextSelection, Toggled};
-use accesskit_consumer::{FilterResult, Node, NodeId, Tree};
+use accesskit_consumer::{FilterResult, FullNodeId as NodeId, NodeRef as Node, Tree};
 
 use crate::context::Context;
 use crate::ffi;

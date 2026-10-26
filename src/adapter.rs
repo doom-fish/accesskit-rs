@@ -11,7 +11,7 @@ use std::sync::Once;
 
 use accesskit::{
     ActionHandler, ActionRequest, ActivationHandler, Node as NodeProvider, NodeId as LocalNodeId, Point, Role,
-    Tree as TreeData, TreeId, TreeUpdate,
+    TreeId, TreeInfo, TreeUpdate,
 };
 use accesskit_consumer::{FilterResult, Tree};
 
@@ -182,7 +182,7 @@ impl Adapter {
                 } else {
                     let placeholder_update = TreeUpdate {
                         nodes: vec![(PLACEHOLDER_ROOT_ID, NodeProvider::new(Role::Window))],
-                        tree: Some(TreeData::new(PLACEHOLDER_ROOT_ID)),
+                        tree: Some(TreeInfo::new(PLACEHOLDER_ROOT_ID)),
                         tree_id: TreeId::ROOT,
                         focus: PLACEHOLDER_ROOT_ID,
                     };

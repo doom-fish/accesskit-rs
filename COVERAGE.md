@@ -1,6 +1,8 @@
 # COVERAGE
 
 - Scope: an AccessKit adapter for `AppKit`. It covers the functions of `accesskit_macos` 0.26.
+- Version 0.2 uses `accesskit` 0.25.2, `accesskit_consumer` 0.39.2 and `TreeInfo` for tree metadata. The native functions stay the same.
+- Consumer node references use `NodeRef`. Consumer node identifiers use `FullNodeId`.
 - Legend: `✅` implemented, `⏭️` not implemented
 
 ## Adapters

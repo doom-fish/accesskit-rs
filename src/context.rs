@@ -9,7 +9,7 @@ use std::fmt;
 use std::rc::Rc;
 
 use accesskit::{ActionHandler, ActionRequest};
-use accesskit_consumer::{NodeId, Tree};
+use accesskit_consumer::{FullNodeId as NodeId, Tree};
 
 use crate::event::Notification;
 use crate::ffi;

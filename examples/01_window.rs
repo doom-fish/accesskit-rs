@@ -1,5 +1,5 @@
 use accesskit::{
-    Action, ActionHandler, ActionRequest, ActivationHandler, Node, NodeId, Rect, Role, Tree, TreeId, TreeUpdate,
+    Action, ActionHandler, ActionRequest, ActivationHandler, Node, NodeId, Rect, Role, TreeId, TreeInfo, TreeUpdate,
 };
 use accesskit_rs::SubclassingAdapter;
 use appkit::prelude::*;
@@ -24,7 +24,7 @@ impl ActivationHandler for InitialTree {
         label.set_bounds(Rect::new(40.0, 160.0, 760.0, 220.0));
         Some(TreeUpdate {
             nodes: vec![(WINDOW, window), (BUTTON, button), (LABEL, label)],
-            tree: Some(Tree::new(WINDOW)),
+            tree: Some(TreeInfo::new(WINDOW)),
             tree_id: TreeId::ROOT,
             focus: BUTTON,
         })
